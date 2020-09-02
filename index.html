@@ -1,114 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>GPA da Calc</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
-        crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        h1{
+            margin-top:50px;
+        }
+        .top{
+            text-align: center;
+        }
+        .main{
+            margin-top: 50px;
+        }
+        .row{
+            margin-top:5px;
+        }
+    </style>
 </head>
 <body>
-	<header>
-		<h1>CGPA Calculator</h1>
-		<p class="methods">
-			Follow the following instructions and use this page to calculate your CGPA:	
-			<ul class="methods">
-				<li>Enter the total credits of all semesters in sequence, comma separated, in the Credits field.</li>
-				<li>Then simply follow any one of the methods to calculate GPA.</li>
-				<li>The credits of CSE16, ECE16, CSE17 & ECE17 IIITNR are given below for your perusal.</li>
-				<li>Use the copy button to copy and paste in the credits field.</li>
-			</ul>
-		</p>
-	</header>
-	<div>
-		<p class="methods"><strong>Semester Credits</strong><br></p>
-		<div id="cseiiit">
-			<i>IIITNR CSE-2016 Batch:</i>
-		<article id="cse16">
-		    17, 18, 19, 19, 20, 17, 13, 6</article><button type="submit" class="copy" id="cse16b">Copy CSE16</button>
-		</div>
-		<div id="eceiiit">
-			<i>IIITNR ECE-2016 Batch:</i>
-		<article id="ece16">    
-		    17, 18, 19, 19, 19, 17, 13, 6</article><button type="submit" class="copy" id="ece16b">Copy ECE16</button>
-		</div>
-		<div id="cseiiit">
-			<i>IIITNR CSE-2017 Batch:</i>
-			<article id="cse17">18, 19, 17, 21, 19, 17, 12, 6</article>
-			<button type="submit" class="copy" id="cse17b">Copy CSE17</button>
-		</div>
-		<div id="eceiiit">
-			<i>IIITNR ECE-2017 Batch:</i>
-			<article id="ece17">18, 19, 17, 19, 21, 17, 12, 6</article>
-			<button type="submit" class="copy" id="ece17b">Copy ECE17</button>
-		</div>
-	</div>
-
-	<div>
-		<p id="cfl"><br>Enter below the total credits of all semesters, in sequence, separated by commas:</p>
-		<form id="cff">
-		    <input type="text" id="c_all" placeholder="All semester credits (Sem 1 to 8)(Comma separated)" class="em" required>
-		</form>
-	</div>
-	<br>
-	<section id="sm1">
-		<p class="methods"><strong>Method 1</strong><br>
-		    Enter the individual SGPAs of all semesters: </p>
-			<form class="methods" id="method1">
-			    <input type="text" id="sem1" placeholder="Semester 1" class="em" required>  
-			    <input type="text" id="sem2" placeholder="Semester 2" class="em" required>
-			    <input type="text" id="sem3" placeholder="Semester 3" class="em" required>  
-			    <input type="text" id="sem4" placeholder="Semester 4" class="em" required>
-			    <input type="text" id="sem5" placeholder="Semester 5" class="em" required>  
-			    <input type="text" id="sem6" placeholder="Semester 6" class="em" required>
-			    <input type="text" id="sem7" placeholder="Semester 7" class="em" required>  
-			    <input type="text" id="sem8" placeholder="Semester 8" class="em" required>
-
-			    <button type="submit" class="submit" id="m1">Submit</button>
-			</form>
-	</section>
-
-	<section id="sm2">
-		<p class="methods"><strong>Method 2</strong><br>
-		   Enter the CGPA till 5th semester and expected SGPA of last 3 semesters: </p>
-			<form class="methods" id="method2">
-				<input type="text" id="sem6m2" placeholder="Semester 6" class="em" required>
-			    <input type="text" id="sem7m2"  placeholder="Semester 7" class="em" required>
-			    <input type="text" id="sem8m2"  placeholder="Semester 8" class="em" required>
-			    <input type="text" id="cg5"  placeholder="CGPA upto 5th sem" class="em" required><br>
-			<button type="submit" class="submit" id="m2">Submit</button>
-		</form>
-	</section>
-
-	<section id="sm3">
-		<p class="methods"><strong>Method 3</strong><br>
-		   Enter the CGPA till 6th semester and expected SGPA of last 2 semesters: </p>
-			<form class="methods" id="method3">
-			    <input type="text" id="sem7m3"  placeholder="Semester 7" class="em" required>
-			    <input type="text" id="sem8m3"  placeholder="Semester 8" class="em" required>
-			    <input type="text" id="cg6"  placeholder="CGPA upto 6th sem" class="em" required><br>
-			<button type="submit" class="submit" id="m3">Submit</button>
-		</form>
-	</section>
-
-	<section id="sm4">
-		<p class="methods"><strong>Method 4</strong><br>
-		   Enter the CGPA till 7th semester and expected SGPA of last semester: </p>
-			<form class="methods" id="method4">
-			    <input type="text" id="sem8m4"  placeholder="Semester 8" class="em" required>
-
-			    <input type="text" id="cg7"  placeholder="CGPA upto 7th sem" class="em" required><br>
-			<button type="submit" class="submit" id="m4">Submit</button>
-		</form>
-	</section>
-	<div class="container" id="footnote">
-        <hr>
-		Made with Web Technologies and <i class="fas fa-heart"></i> by <a href="http://github.com/mayank-kumar-giri/">Mayank Kumar Giri</a>  <br>
-		and edit by <a href="https://github.com/jai-dewani"> Jai Kumar Dewani</a>
-        <br>
-        Follow the code on <i class="fab fa-github"></i> <a href="https://github.com/mayank-kumar-giri/cgpa-calculator">GitHub</a>
+    <h1 class="top">
+        CGPA Calculator
+    </h1>	
+    <h3 class="top">
+        Enter the credits and the respective SGPA for that semester.
+    </h3>
+    <div style="text-align: center; margin: 0 10px">
+        If you haven't appeared for a semester enter <strong>0 in credit and SGPA</strong>
     </div>
+    <div class="container main">
+        <div class="row">
+            <div class="col-3">
+                1st Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit1" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem1" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                2nd Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit2" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem2" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                3rd Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit3" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem3" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                4th Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit4" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem4" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                5th Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit5" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem5" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                6th Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit6" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem6" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                7th Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit7" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem7" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                8th Semester 
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" id="credit8" placeholder="Credits">
+            </div>
+            <div class="col">   
+                <input class="form-control" type="text" id="sem8" placeholder="SGPA">
+            </div>
+        </div>
+        <div class="row">
+            <div style="text-align: center; width: 100%; margin-top:10px">
+                <button class="btn btn-primary" id="submit">Calculate SGPA</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                Total CGPA:
+                <input class="form-control" type="text" id="cgpa" readonly>
+            </div>
+        </div>
+    </div>    
+
+    <script src="js/cgpa.js"></script>
 </body>
-<script src="js/index.js"></script>
 </html>
