@@ -1,3 +1,6 @@
 # cgpa-calculator
 
-A simple GPA calculator app <a href="http://calculate-my-gpa.github.me/" target="_blank">(Click to open)</a>
+A simple CGPA calculator app 
+Link to the hosted app => [https://jai-dewani.github.io/cgpa-calculator/](https://jai-dewani.github.io/cgpa-calculator/)
+
+I haven't adeed credits for other batches and branches because I don't have that information, maybe someone could add a pull request after updating this.
