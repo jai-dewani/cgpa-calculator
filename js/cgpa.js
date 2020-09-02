@@ -86,6 +86,12 @@ $("#submit").on('click',function(e){
     var CGPA = totalGPA/totalCredits
     CGPA = CGPA * 100;
     CGPA = Math.floor(CGPA)
-    console.log(CGPA/100,totalGPA,totalCredits);
-    $('#cgpa').val(CGPA/100)
+    CGPA = CGPA/100
+    console.log(CGPA,totalGPA,totalCredits);
+    $('#cgpa').val(CGPA)
+    var percentage = CGPA*10+5;
+    if (percentage>100){
+        percentage=100;
+    }
+    $('#percentage').val(percentage);
 })
