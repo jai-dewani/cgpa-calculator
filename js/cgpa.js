@@ -1,3 +1,16 @@
+function setValue(ar){
+    for(i=0;i<ar.length;i++){
+        $('#credit'+String(i+1)).val(ar[i])
+        console.log('#credit'+String(i+1))
+    }
+}
+
+$('#cse2017').on('click',function(e){
+    var ar = [18, 19, 17, 20, 19, 17, 12]
+    setValue(ar)    
+})
+
+
 $("#submit").on('click',function(e){
     const credit1 = parseInt($('#credit1').val())
     const credit2 = parseInt($('#credit2').val())
