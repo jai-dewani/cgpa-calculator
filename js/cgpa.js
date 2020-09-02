@@ -35,14 +35,14 @@ $("#submit").on('click',function(e){
     var totalCredits = 0;
     var totalGPA = 0;
     if (credit1!==0 && !isNaN(credit1)){
-        totalCredits += credit1
         if (sem1!==0 && !isNaN(sem1)){
+            totalCredits += credit1
             totalGPA += sem1*credit1
         }    
     }
     if (credit2!==0 && !isNaN(credit2)){
-        totalCredits += credit2
         if (sem2!==0 && !isNaN(sem2)){
+            totalCredits += credit2
             totalGPA += sem2*credit2
         }
     }
